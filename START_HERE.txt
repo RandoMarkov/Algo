@@ -1,0 +1,38 @@
+FUND & PORTFOLIO TOOL  —  Windows package
+=========================================
+
+PREREQUISITE
+  Python 3.10+ installed (https://www.python.org/downloads/ — tick
+  "Add python.exe to PATH" during install). Excel (desktop, Windows).
+
+STEP 1 - Install (one time)
+  Double-click  install.bat
+  Creates a local Python environment, installs the libraries, and installs
+  the xlwings Excel add-in.
+
+STEP 2 - Verify the engine (optional, no Excel needed)
+  Double-click  run_headless.bat
+  Runs the full pipeline on the sample fund files and should print
+  "ALL CHECKS PASSED", producing sample_results.xlsx and sample_evolution.xlsx.
+
+STEP 3 - Wire up Excel (one time)
+  Open  PortfolioTool.xlsx  and follow  SETUP.md :
+    - import FundTool.bas and tick the xlwings reference
+    - draw 4 buttons and assign the macros
+    - Save As  PortfolioTool.xlsm
+
+DAILY USE
+  Put your fund .xlsx files in THIS folder, then use the 4 buttons on the
+  Control sheet:  (1) Record fund  (2) Compute  (3) Make charts  (4) Evolution.
+  Full details and troubleshooting are in SETUP.md.
+
+WHAT'S IN HERE
+  PortfolioTool.xlsx   front-end workbook (buttons get added in Excel)
+  FundTool.bas         the VBA (4 one-line macros)
+  *.py                 the Python engine (all real logic)
+  incoming_samples\    example fund files (Equity / Fixed Income / Alternatives)
+  requirements.txt     pinned Python dependencies
+  install.bat          one-time installer
+  run_headless.bat     verify the engine without Excel
+  SETUP.md             full Excel wiring + troubleshooting
+  README.md            design notes
